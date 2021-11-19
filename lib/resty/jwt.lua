@@ -1,5 +1,5 @@
 local cjson = require "cjson.safe"
-
+local base64 = require "ngx.base64"
 local evp = require "resty.evp"
 local hmac = require "resty.hmac"
 local resty_random = require "resty.random"
@@ -16,8 +16,8 @@ local string_format = string.format
 local string_sub = string.sub
 local string_char = string.char
 local table_concat = table.concat
-local ngx_encode_base64 = ngx.encode_base64
-local ngx_decode_base64 = ngx.decode_base64
+local ngx_encode_base64 = base64.encode_base64url
+local ngx_decode_base64 = base64.decode_base64url
 local cjson_encode = cjson.encode
 local cjson_decode = cjson.decode
 local tostring = tostring
